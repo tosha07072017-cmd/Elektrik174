@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электрик в Челябинске — Профессиональные услуги электромонтажа</title>
+    <meta name="description" content="Профессиональный электрик в Челябинске. Услуги электромонтажа любой сложности. Выезд на дом. Гарантия качества. Звоните: +7 (922) 733-18-02">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--gray);
+        }
+
+        .header-phone {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            color: white;
+        }
+
+        .header-phone a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .header-phone a:hover {
+            color: #fbbf24;
+        }
+
+        .header-phone span {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #e2e8f0;
+            font-size: 15px;
+        }
+
+        .hero-feature::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 380px;
+            text-align: center;
+        }
+
+        .hero-card-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+        }
+
+        .hero-card h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .hero-card .phone-big {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .hero-card .phone-label {
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-desc {
+            color: var(--gray);
+            font-size: 17px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 30px;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Why Us */
+        .why-us {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .why-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .why-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .why-item p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta h2 span {
+            color: var(--primary);
+        }
+
+        .cta p {
+            color: #94a3b8;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .cta-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .cta-phone:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker);
+            padding: 50px 0 30px;
+            color: #94a3b8;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .footer-right a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+            color: #475569;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-features {
+                align-items: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-card {
+                max-width: 100%;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-phone a {
+                font-size: 16px;
+            }
+
+            .hero-content h1 {
+                font-size: 28px;
+            }
+
+            .btn {
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">⚡</div>
+                <div class="logo-text">
+                    ЭЛЕКТРИК 74
+                    <span>Челябинск</span>
+                </div>
+            </a>
+            <div class="header-phone">
+                <a href="tel:+79227331802">+7 (922) 733-18-02</a>
+                <span>Ежедневно с 8:00 до 22:00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="animate">Профессиональный <span>электрик</span> в Челябинске</h1>
+                <p class="hero-subtitle animate delay-1">Все виды электромонтажных работ с гарантией качества. Выезд мастера в день обращения.</p>
+                <div class="hero-features animate delay-2">
+                    <div class="hero-feature">Опыт работы более 10 лет</div>
+                    <div class="hero-feature">Бесплатный выезд и диагностика</div>
+                    <div class="hero-feature">Гарантия на все работы до 2 лет</div>
+                    <div class="hero-feature">Работаем с физическими и юридическими лицами</div>
+                </div>
+                <div class="hero-buttons animate delay-3">
+                    <a href="tel:+79227331802" class="btn btn-primary">📞 Позвонить сейчас</a>
+                    <a href="#services" class="btn btn-outline">Услуги и цены</a>
+                </div>
+            </div>
+            <div class="hero-visual animate delay-2">
+                <div class="hero-card">
+                    <div class="hero-card-icon">🔌</div>
+                    <h3>Срочный выезд электрика</h3>
+                    <p>Приедем в течение 1 часа. Решим любую проблему с электрикой.</p>
+                    <a href="tel:+79227331802" class="phone-big">+7 (922) 733-18-02</a>
+                    <span class="phone-label">Звоните прямо сейчас</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Наши услуги</span>
+                <h2 class="section-title">Услуги электромонтажа</h2>
+                <p class="section-desc">Выполняем полный спектр электромонтажных работ в квартирах, домах и офисах Челябинска</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Электромонтаж в квартирах</h3>
+                    <p>Замена проводки, установка розеток и выключателей, монтаж распределительных щитов, подключение бытовой техники.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Электромонтаж в офисах</h3>
+                    <p>Прокладка кабельных трасс, монтаж освещения, установка розеточных групп, настройка систем учёта электроэнергии.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Замена и ремонт проводки</h3>
+                    <p>Полная или частичная замена электропроводки, устранение коротких замыканий, замена алюминия на медь.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Установка щитов и автоматов</h3>
+                    <p>Монтаж и замена распределительных щитов, установка автоматических выключателей, УЗО и диффавтоматов.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Монтаж освещения</h3>
+                    <p>Установка люстр, светильников, точечных светильников, светодиодных лент, датчиков движения и освещённости.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Установка розеток и выключателей</h3>
+                    <p>Монтаж и перенос розеток, выключателей, подключение электроплит, стиральных машин, бойлеров и другой техники.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌡️</div>
+                    <h3>Электрическое отопление</h3>
+                    <p>Монтаж электрических котлов, тёплых полов, конвекторов, радиаторов. Подключение и настройка систем отопления.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Установка УЗО и защиты</h3>
+                    <p>Установка устройств защитного отключения, заземление, молниезащита, защита от перенапряжения.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📹</div>
+                    <h3>Электрика под ключ</h3>
+                    <p>Полный комплекс электромонтажных работ от проектирования до сдачи объекта. Работаем по договору.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Почему мы</span>
+                <h2 class="section-title">Преимущества работы с нами</h2>
+                <p class="section-desc">Мы ценим ваше время и доверие, поэтому гарантируем качество на каждом этапе</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-number">01</div>
+                    <h3>Быстрый выезд</h3>
+                    <p>Приезжаем в течение 1 часа после звонка. Работаем без выходных и праздников.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">02</div>
+                    <h3>Честные цены</h3>
+                    <p>Фиксированная стоимость работ без скрытых платежей. Смета согласуется до начала работ.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">03</div>
+                    <h3>Гарантия качества</h3>
+                    <p>Предоставляем гарантию до 2 лет на все виды выполненных работ и материалы.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">04</div>
+                    <h3>Опытные мастера</h3>
+                    <p>Только квалифицированные электрики с допуском и стажем работы от 10 лет.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Нужен <span>электрик</span> в Челябинске?</h2>
+            <p>Позвоните прямо сейчас и получите бесплатную консультацию. Выезд мастера в день обращения!</p>
+            <a href="tel:+79227331802" class="cta-phone">
+                <span>📞</span>
+                +7 (922) 733-18-02
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span>⚡</span>
+                <span>ЭЛЕКТРИК 74 — Челябинск</span>
+            </div>
+            <div class="footer-right">
+                <a href="tel:+79227331802">+7 (922) 733-18-02</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Электрик 74. Все права защищены. Челябинск.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+            } else {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .why-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
